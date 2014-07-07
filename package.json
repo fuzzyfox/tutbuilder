@@ -1,0 +1,34 @@
+{
+  "name": "tutbuilder",
+  "version": "0.0.1",
+  "description": "A prototype to aid in the creation of tutorials for thimble makes.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fuzzyfox/tutbuilder.git"
+  },
+  "keywords": [
+    "mozilla",
+    "webmaker",
+    "thimble",
+    "tutorial"
+  ],
+  "author": "William Duyck <wduyck@mozillafoundation.org>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/fuzzyfox/tutbuilder/issues"
+  },
+  "homepage": "https://github.com/fuzzyfox/tutbuilder",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.11.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nunjucks": "^0.1.4"
+  },
+  "dependencies": {}
+}

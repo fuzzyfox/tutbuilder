@@ -1,0 +1,31 @@
+{
+  "name": "tutbuilder",
+  "version": "0.0.1",
+  "authors": [
+    "William Duyck <wduyck@mozillafoundation.org>"
+  ],
+  "description": "A prototype to aid in the creation of tutorials for thimble makes.",
+  "keywords": [
+    "mozilla",
+    "webmaker",
+    "thimble",
+    "tutorial"
+  ],
+  "license": "MPL-2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.1.0",
+    "makerstrap": "~0.2.0",
+    "marked": "~0.3.2",
+    "nunjucks": "~1.0.5",
+    "makeapi-client": "~0.5.26",
+    "prismjs": "*"
+  }
+}
