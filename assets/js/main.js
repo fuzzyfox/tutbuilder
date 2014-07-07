@@ -259,7 +259,11 @@ $( function() {
       sendOverwrite( tutorialHtml );
 
       // hide form
-      $( '#new-section' ).fadeOut();
+      $( '#editor-tabs a:first' ).tab( 'show' );
+
+      var newSectionTab = $( 'a[href=#new-section][role=tab]' );
+      newSectionTab.parent( 'li' ).addClass( 'disabled' );
+      newSectionTab.parent( 'li' ).html( '<a href="#">' + newSectionTab.text() + '</a>' );
 
       // scroll code to top (instant)
       $( '#make-code pre' ).scrollTop( 0 );
@@ -277,7 +281,6 @@ $( function() {
 /*
   Replicate tutorial scroll to line functionality
  */
-
 $( window ).on( 'message', function( event ) {
   'use strict';
 

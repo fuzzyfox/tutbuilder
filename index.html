@@ -50,52 +50,54 @@
     <section id="editor">
       <div class="row">
         <div class="col-sm-4">
-          <iframe src="https://mozillathimblelivepreview.net/previewloader.html" frameborder="0" id="previewFrame" style="height:400px;width:100%;box-shadow: 0 0 4px rgba(0,0,0,0.4);"></iframe>
+          <iframe src="https://mozillathimblelivepreview.net/previewloader.html" frameborder="0" id="previewFrame" style="height:500px;width:100%;box-shadow: 0 0 4px rgba(0,0,0,0.4);"></iframe>
         </div>
-        <div class="col-sm-8" id="make-code">
-          <pre class="line-numbers"><code class="language-markup"></code></pre>
+
+        <div class="col-sm-8">
+          <div class="row">
+            <ul class="nav nav-tabs" role="tablist" id="editor-tabs">
+              <li><a href="#make-code" role="tab" data-toggle="tab">Make Code</a></li>
+              <li class="active"><a href="#new-section" role="tab" data-toggle="tab">New Tutorial Section</a></li>
+            </ul>
+          </div>
+          <div class="row tab-content">
+            <section id="make-code" class="tab-pane fade">
+              <pre class="line-numbers"><code class="language-markup"></code></pre>
+            </section>
+
+            <section id="new-section" class="tab-pane fade in active">
+              <form action="#" role="form">
+                <div class="form-group">
+                  <label for="section-name">Section Name</label>
+                  <input type="text" id="section-name" class="form-control" name="section-name" required>
+                  <p class="help-block">This is for your reference only.</p>
+                </div>
+
+                <div class="form-group">
+                  <label for="section-content">Section Content</label>
+                  <textarea name="section-content" id="section-content" cols="30" rows="10" class="form-control" required></textarea>
+                  <p class="help-block">Markdown + HTML accepted.</p>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" id="section-add" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add another
+                  </button>
+
+                  <button type="button" id="tutorial-complete" class="btn btn-default">
+                    <i class="fa fa-check"></i> I'm done
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <!-- section nav -->
-        <aside class="col-sm-4">
-          <nav>
-            <ul id="section-list" class="nav nav-pills nav-stacked"></ul>
-          </nav>
-        </aside>
-
-        <!-- section create form -->
-        <section class="col-sm-8" id="new-section">
-          <form action="#" role="form">
-            <div class="form-group">
-              <label for="section-name">Section Name</label>
-              <input type="text" id="section-name" class="form-control" name="section-name" required>
-              <p class="help-block">This is for your reference only.</p>
-            </div>
-
-            <div class="form-group">
-              <label for="section-content">Section Content</label>
-              <textarea name="section-content" id="section-content" cols="30" rows="10" class="form-control" required></textarea>
-              <p class="help-block">Markdown + HTML accepted.</p>
-            </div>
-
-            <div class="form-group">
-              <button type="submit" id="section-add" class="btn btn-primary">
-                <i class="fa fa-plus"></i> Add another
-              </button>
-
-              <button type="button" id="tutorial-complete" class="btn btn-default">
-                <i class="fa fa-check"></i> I'm done
-              </button>
-            </div>
-          </form>
-        </section>
-      </div>
-    </section>
   </main>
 
   <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
   <script src="/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/assets/vendor/matchHeight/jquery.matchHeight-min.js"></script>
   <script src="/assets/vendor/prismjs/prism.js"></script>
   <script src="/assets/vendor/prismjs/plugins/line-numbers/prism-line-numbers.js" data-manual></script>
   <script src="/assets/vendor/makeapi-client/src/make-api.js"></script>

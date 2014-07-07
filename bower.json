@@ -1,6 +1,5 @@
 {
   "name": "tutbuilder",
-  "version": "0.0.1",
   "authors": [
     "William Duyck <wduyck@mozillafoundation.org>"
   ],
@@ -26,6 +25,7 @@
     "marked": "~0.3.2",
     "nunjucks": "~1.0.5",
     "makeapi-client": "~0.5.26",
-    "prismjs": "*"
+    "prismjs": "*",
+    "matchHeight": "~0.5.2"
   }
 }

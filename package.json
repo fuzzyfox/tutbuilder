@@ -1,6 +1,6 @@
 {
   "name": "tutbuilder",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A prototype to aid in the creation of tutorials for thimble makes.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
