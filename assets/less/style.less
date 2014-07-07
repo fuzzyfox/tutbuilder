@@ -1,0 +1,33 @@
+// Google fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
+
+// Makerstrap
+@import '../vendor/makerstrap/less/makerstrap';
+@makerstrap-bower-path: '../vendor';
+
+// FontAwesome
+@import '../vendor/font-awesome/less/font-awesome';
+@fa-font-path: '../vendor/font-awesome/fonts';
+
+#get-started {
+  margin-top: 200px;
+}
+
+#editor {
+  display: none;
+}
+
+#make-code pre[class*=language-] {
+  text-overflow: ellipsis;
+  max-height: 400px;
+  overflow-y: scroll;
+  // display: none;
+
+  .line-numbers-rows span {
+    transition: background ease 0.4s;
+  }
+}
+
+#new-section {
+  margin-top: 1em;
+}

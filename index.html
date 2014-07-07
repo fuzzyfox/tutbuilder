@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/assets/vendor/prismjs/prism.css">
+  <link rel="stylesheet" href="/assets/vendor/prismjs/plugins/line-numbers/prism-line-numbers.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>TutBuilder</title>
+</head>
+<body>
+  <!-- navigation -->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-bars fa-fw"></span>
+        </button>
+        <a class="navbar-brand" href="/">TutBuilder</a>
+      </div>
+
+      <div style="height: 0px;" class="collapse navbar-collapse" collapse="isCollapsed">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/"><i class="fa fa-refresh"></i> restart</a></li>
+          <li><a href="https://github.com/fuzzyfox/tutbuilder"><span class="fa fa-github"></span> fuzzyfox/tutbuilder</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+  <!-- end navigation -->
+
+  <main class="container">
+    <section class="row" id="get-started">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form action="#" role="form">
+          <fieldset>
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" class="form-control input-lg" name="make-url" id="make-url" required>
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-lg btn-primary">Get Started</button>
+                </div>
+              </div>
+              <p class="help-block">Enter the URL for a make to get started.</p>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section id="editor">
+      <div class="row">
+        <div class="col-sm-4">
+          <iframe src="https://mozillathimblelivepreview.net/previewloader.html" frameborder="0" id="previewFrame" style="height:500px;width:100%;box-shadow: 0 0 4px rgba(0,0,0,0.4);"></iframe>
+        </div>
+
+        <div class="col-sm-8">
+          <div class="row">
+            <ul class="nav nav-tabs" role="tablist" id="editor-tabs">
+              <li><a href="#make-code" role="tab" data-toggle="tab">Make Code</a></li>
+              <li class="active"><a href="#new-section" role="tab" data-toggle="tab">New Tutorial Section</a></li>
+            </ul>
+          </div>
+          <div class="row tab-content">
+            <section id="make-code" class="tab-pane fade">
+              <pre class="line-numbers"><code class="language-markup"></code></pre>
+            </section>
+
+            <section id="new-section" class="tab-pane fade in active">
+              <form action="#" role="form">
+                <div class="form-group">
+                  <label for="section-name">Section Name</label>
+                  <input type="text" id="section-name" class="form-control" name="section-name">
+                  <p class="help-block">This is for your reference only and will be added as a code comment.</p>
+                </div>
+
+                <div class="form-group">
+                  <label for="section-content">Section Content</label>
+                  <textarea name="section-content" id="section-content" cols="30" rows="10" class="form-control" required></textarea>
+                  <p class="help-block">Markdown + HTML accepted.</p>
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" id="section-add" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Add another
+                  </button>
+
+                  <button type="button" id="tutorial-complete" class="btn btn-default">
+                    <i class="fa fa-check"></i> I'm done
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/assets/vendor/matchHeight/jquery.matchHeight-min.js"></script>
+  <script src="/assets/vendor/prismjs/prism.js"></script>
+  <script src="/assets/vendor/prismjs/plugins/line-numbers/prism-line-numbers.js" data-manual></script>
+  <script src="/assets/vendor/makeapi-client/src/make-api.js"></script>
+  <script src="/assets/vendor/marked/lib/marked.js"></script>
+  <script src="/assets/vendor/nunjucks/browser/nunjucks-slim.min.js"></script>
+  <script src="/assets/templates/nunjucks-templates.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
