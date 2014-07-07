@@ -66,7 +66,7 @@ module.exports = function( grunt ) {
       options: {
         base: 'public'
       },
-      src: [ '**' ]
+      src: [ '**/*' ]
     }
   });
 
