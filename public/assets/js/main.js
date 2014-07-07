@@ -182,7 +182,7 @@ $( function() {
       frame.postMessage( JSON.stringify( message ), '*' );
     }
     // initial source to load (blank tut)
-    sendOverwrite( nunjucks.render( 'templates/tutorial.html', {
+    sendOverwrite( nunjucks.render( 'assets/templates/tutorial.html', {
       make: makeDetails
     } ) );
 
@@ -190,7 +190,7 @@ $( function() {
       deal w/ add section
      */
     $( '#new-section form' ).on( 'submit', function() {
-      if( !$( '#section-name' ).val() && !$( '#section-content' ).val() ) {
+      if( !$( '#section-content' ).val() ) {
         // must have values to submit
         console.log( 'fail' );
         return false;
@@ -209,7 +209,7 @@ $( function() {
       });
 
       // render the template w/ known sections (in order)
-      var tutorialHtml = nunjucks.render( 'templates/tutorial.html', {
+      var tutorialHtml = nunjucks.render( 'assets/templates/tutorial.html', {
         sections: sections,
         make: makeDetails
       });
@@ -233,7 +233,7 @@ $( function() {
      */
     $( '#tutorial-complete' ).on( 'click', function() {
       // add final details if given
-      if( $( '#section-name' ).val() && $( '#section-content' ).val() ) {
+      if( $( '#section-content' ).val() ) {
         tutorial.push({
           name: $( '#section-name' ).val().trim(),
           content: marked( $( '#section-content' ).val() )
@@ -248,7 +248,7 @@ $( function() {
       });
 
       // render the template w/ known sections (in order)
-      var tutorialHtml = nunjucks.render( 'templates/tutorial.html', {
+      var tutorialHtml = nunjucks.render( 'assets/templates/tutorial.html', {
         sections: sections,
         make: makeDetails
       });
@@ -303,7 +303,7 @@ $( window ).on( 'message', function( event ) {
         line.css({
           backgroundColor: 'transparent'
         });
-      }, 2000 );
+      }, 3000 );
 
       // scroll to line
       $( '#make-code pre' ).animate({

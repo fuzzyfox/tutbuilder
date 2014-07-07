@@ -36,6 +36,6 @@ Icon
 
 
 ### Project Specific
-assets/vendor
-assets/templates/*.js
-assets/css
+public/assets/vendor
+public/assets/templates/*.js
+public/assets/css

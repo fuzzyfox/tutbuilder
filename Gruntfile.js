@@ -20,35 +20,35 @@ module.exports = function( grunt ) {
       },
       files: [
         'Gruntfile.js',
-        'asset/js/**/*.js'
+        'public/asset/js/**/*.js'
       ]
     },
 
     less: {
       development: {
         options: {
-          paths: [ 'assets/css' ],
+          paths: [ 'public/assets/css' ],
           compress: true,
           sourceMap: true,
           sourceMapBasepath: '/',
           sourceMapRootpath: '/'
         },
         files: {
-          'assets/css/style.css': 'assets/less/style.less'
+          'public/assets/css/style.css': 'public/assets/less/style.less'
         }
       }
     },
 
     nunjucks: {
       precompile: {
-        baseDir: 'assets/',
-        src: 'assets/templates/*.html',
-        dest: 'assets/templates/nunjucks-templates.js'
+        baseDir: 'public',
+        src: 'public/assets/templates/*.html',
+        dest: 'public/assets/templates/nunjucks-templates.js'
       }
     },
 
     watch: {
-      files: [ 'assets/js/*.js', 'assets/less/*.less', 'assets/templates/*.html' ],
+      files: [ 'public/assets/js/*.js', 'public/assets/less/*.less', 'public/assets/templates/*.html' ],
       tasks: [ 'jshint', 'less', 'nunjucks' ]
     },
 
@@ -57,9 +57,16 @@ module.exports = function( grunt ) {
         options: {
           port: 1122,
           useAvailablePort: true,
-          base: './'
+          base: './public'
         }
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'public'
+      },
+      src: [ '**' ]
     }
   });
 
@@ -68,6 +75,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks( 'grunt-contrib-less' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
   grunt.loadNpmTasks( 'grunt-nunjucks' );
+  grunt.loadNpmTasks( 'grunt-gh-pages' );
 
   grunt.registerTask( 'default', [ 'jshint', 'less', 'nunjucks', 'connect', 'watch' ] );
 };
