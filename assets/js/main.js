@@ -84,7 +84,7 @@ function getValidMake( url, apiURL ) {
 
       // prep url for get using jQuery
       url = url.replace( /^https?:\/\//i, '' ) + '_';
-      var getMake = $.get( 'http://www.corsproxy.com/' + url );
+      var getMake = $.get( 'https://cors-anywhere.herokuapp.com/' + url );
 
       // yay go the make html
       getMake.done( function( data ) {
